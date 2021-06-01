@@ -1,4 +1,4 @@
-﻿namespace Cativity
+﻿namespace Cativity.PostgresPersistence
 
 module Say =
     let hello name =
