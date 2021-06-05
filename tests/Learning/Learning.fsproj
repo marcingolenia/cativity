@@ -5,14 +5,14 @@
         <GenerateProgramFile>false</GenerateProgramFile>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="Tests.fs"/>
-        <Compile Include="Program.fs"/>
+        <Compile Include="CosmoStore.fs" />
+        <Compile Include="Program.fs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="FsUnit.xUnit" Version="4.0.4"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1"/>
-        <PackageReference Include="xunit" Version="2.4.1"/>
-        <PackageReference Include="CosmoStore" Version="3.0.1"/>
-        <PackageReference Include="CosmoStore.Marten" Version="3.0.1"/>
+        <PackageReference Include="FsUnit.xUnit" Version="4.0.4" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="CosmoStore" Version="3.0.1" />
+        <PackageReference Include="CosmoStore.Marten" Version="3.0.1" />
     </ItemGroup>
 </Project>

@@ -1,7 +1,6 @@
 module Tests
 
 open System
-open System.Threading
 open System.Threading.Tasks
 open Xunit
 open CosmoStore.Marten
@@ -95,7 +94,7 @@ let ``Basic event appending to postgres stream and subscription to stream`` () =
         consumedEvents <- evt.Data :: consumedEvents
         if consumedEvents.Length = eventsCount then tcs.SetResult(())
         )
-
+    
     let eventWrite i: EventWrite<DummyEvent> =
         { Id = Guid.NewGuid()
           CorrelationId = None
@@ -116,3 +115,7 @@ let ``Basic event appending to postgres stream and subscription to stream`` () =
     tcs.Task |> Async.AwaitTask |> Async.RunSynchronously
     consumedEvents.Length |> should equal eventsCount
     printfn "Done!"
+    
+// Error handling idea:
+// 1. When app crashes, fetch stream on startup from latest event version, then subscribe again.
+// 2. When subscription crashes - check for options ???

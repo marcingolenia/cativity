@@ -5,7 +5,7 @@ open CativityV1
 open Xunit
 open FsUnit.Xunit
 
-let lazyCat name = LazyCat { Name = name; MiceEaten = FedThreshold  }
+let lazyCat name = LazyCat { Id = 1L; Name = name; MiceEaten = FedThreshold  }
 
 [<Fact>]
 let ``Lazy cat when digests mouse then it becomes hungry`` () =
@@ -24,7 +24,7 @@ let ``Lazy cat when digests mouse then it becomes hungry`` () =
 [<Fact>]
 let ``Hungry cat doesn't digests mouse if it hasn't eat anything`` () =
     // Arrange
-    let mruczekBefore = Cat.zero "mruczek"
+    let mruczekBefore = Cat.zero
     // Act
     let result = digestMouse mruczekBefore DateTime.UtcNow
     // Assert
